@@ -30,6 +30,156 @@ Description: add and remove users and groups
  .
  A custom script can be executed after each of the commands.
 
+Package: apparmor
+Status: install ok installed
+Priority: optional
+Section: admin
+Installed-Size: 1833
+Maintainer: Debian AppArmor Team <pkg-apparmor-team@lists.alioth.debian.org>
+Architecture: amd64
+Version: 2.13.2-10
+Replaces: fcitx-data (<< 1:4.2.9.1-1ubuntu2)
+Depends: debconf, lsb-base, debconf (>= 0.5) | debconf-2.0, python3:any, libc6 (>= 2.17)
+Suggests: apparmor-profiles-extra, apparmor-utils
+Breaks: apparmor-profiles-extra (<< 1.21), fcitx-data (<< 1:4.2.9.1-1ubuntu2), media-hub, mediascanner2.0, messaging-app, webbrowser-app
+Conffiles:
+ /etc/apparmor.d/abstractions/X e7d6b5c851020c55ce6be918e3b4b270
+ /etc/apparmor.d/abstractions/apache2-common 3e80c6e6f9291caac0943569691e7dd7
+ /etc/apparmor.d/abstractions/apparmor_api/change_profile 9f4c0a621f4939af15588b7fe670dfe7
+ /etc/apparmor.d/abstractions/apparmor_api/examine f3b118b0344df2bcf4d18b81b45536bd
+ /etc/apparmor.d/abstractions/apparmor_api/find_mountpoint cf9e6513e00b441c0e3fbaf57b5c5110
+ /etc/apparmor.d/abstractions/apparmor_api/introspect 4c345c7e02de097f250c3ab12a442bed
+ /etc/apparmor.d/abstractions/apparmor_api/is_enabled 782acb0a48722a79a57d04bfb36b7c96
+ /etc/apparmor.d/abstractions/aspell fdcbf54106fd1ee376d4ade77e720488
+ /etc/apparmor.d/abstractions/audio 1f5ee9faece9e2d724682f182490f25c
+ /etc/apparmor.d/abstractions/authentication 4ca6d1cf0d2d782f23059939670643c2
+ /etc/apparmor.d/abstractions/base 4151b5090ddccdd2151474d162cd6a1b
+ /etc/apparmor.d/abstractions/bash 4a5f51dc0fe10de2eba86b22351ae092
+ /etc/apparmor.d/abstractions/consoles c7e6e00c4845e9afb877359691946386
+ /etc/apparmor.d/abstractions/cups-client ea86b52242df406f0bc955039f990006
+ /etc/apparmor.d/abstractions/dbus db5bb2211ee5ecf1d2d4eb72c0e52617
+ /etc/apparmor.d/abstractions/dbus-accessibility 1a9829023057d91f2f709b49ded37c87
+ /etc/apparmor.d/abstractions/dbus-accessibility-strict 0e07c997566b1d71b9287c0a3dcb1292
+ /etc/apparmor.d/abstractions/dbus-session e9dabe52be01410c4e4c9a9e8ef9779d
+ /etc/apparmor.d/abstractions/dbus-session-strict 1b337318faff3bd439f86dfc4b040d1d
+ /etc/apparmor.d/abstractions/dbus-strict d2a901e0369ab95a244828e2d296276e
+ /etc/apparmor.d/abstractions/dconf 02249fe91402fccef01161a61c557098
+ /etc/apparmor.d/abstractions/dovecot-common 78e81f03910bca0e407c16a1d8169861
+ /etc/apparmor.d/abstractions/dri-common 30bb562c34a60198d3fa9ef37f77ee80
+ /etc/apparmor.d/abstractions/dri-enumerate c01f5e3c4134ecd67acb00bcffde358b
+ /etc/apparmor.d/abstractions/enchant a1ac9629b466be8a41cb5f87757f3363
+ /etc/apparmor.d/abstractions/fcitx 3c43cb38623c123d8a64a02aae42b452
+ /etc/apparmor.d/abstractions/fcitx-strict dbf5ff5b2fcbaa30bd47eb6789190485
+ /etc/apparmor.d/abstractions/fonts ff494a93e6de60b340220fbf3c54a9ab
+ /etc/apparmor.d/abstractions/freedesktop.org ff99568b9ec977c5aef244149304d521
+ /etc/apparmor.d/abstractions/gnome 772826a25cbd9bcb6ceed91c9a373c1c
+ /etc/apparmor.d/abstractions/gnupg 7cde476e7fc1b5e3ae1ff8a15f0bd524
+ /etc/apparmor.d/abstractions/ibus 3e70b36c4931993a0a37d50fa6ddc1ec
+ /etc/apparmor.d/abstractions/kde f2e06a5967e321262ca9b37288cfbc12
+ /etc/apparmor.d/abstractions/kde-globals-write e8235948f44b2064ef48ee379eb061b5
+ /etc/apparmor.d/abstractions/kde-icon-cache-write 8cc2941ba1fe9989a90abc547f507bb5
+ /etc/apparmor.d/abstractions/kde-language-write 9bd64008a5bb3a805d4697a95de373a2
+ /etc/apparmor.d/abstractions/kerberosclient 165918f6f7a43c7f8026ff330500a1ba
+ /etc/apparmor.d/abstractions/ldapclient f6d4bac77e72abbace3805ad95dc5fad
+ /etc/apparmor.d/abstractions/libpam-systemd fdeb09a6c1f0d201abfd5cd12262a3b7
+ /etc/apparmor.d/abstractions/likewise eda6f01c5c1f1f09bc85a7f3a1d3ebaf
+ /etc/apparmor.d/abstractions/mdns d4959c984a530f8c682e31f34927d57e
+ /etc/apparmor.d/abstractions/mesa f5327cab99c4b23fc6843f7d3cd78556
+ /etc/apparmor.d/abstractions/mir d40c45b5284efa1e7aa8e473bf3eaa63
+ /etc/apparmor.d/abstractions/mozc fde97592da93e4b4ec9667cc0a38cd11
+ /etc/apparmor.d/abstractions/mysql be34db29008a5c06387c6928b0536ecc
+ /etc/apparmor.d/abstractions/nameservice 2864cc9ad5f278101731ac5603b3fbc3
+ /etc/apparmor.d/abstractions/nis b2a829a4e26dd3ae92ec2f67536edc20
+ /etc/apparmor.d/abstractions/nvidia 1a4da59521d8934654b04cd81b7a5a91
+ /etc/apparmor.d/abstractions/opencl 34d7e0766eec3db8b394f205dc20f44f
+ /etc/apparmor.d/abstractions/opencl-common 8f40763dcf90c692082cc2bd85046470
+ /etc/apparmor.d/abstractions/opencl-intel b5134bd9b5922602f80051baab3d40c5
+ /etc/apparmor.d/abstractions/opencl-mesa 58b8d60a9048eedcd516474ce3e10732
+ /etc/apparmor.d/abstractions/opencl-nvidia 2019459bd137008b07d6cfcdc6c68017
+ /etc/apparmor.d/abstractions/opencl-pocl d0ebd9e1ee14039d7309756e7417e10d
+ /etc/apparmor.d/abstractions/openssl 774ca398a166520a1cdb84d8b8a7b7dc
+ /etc/apparmor.d/abstractions/orbit2 98b6459f02e5c68e6ef83dced628ea5f
+ /etc/apparmor.d/abstractions/p11-kit dc059947c11d3f353c380ca7547390ce
+ /etc/apparmor.d/abstractions/perl 2efc405658e3cbcfdca9e95bfdecdcff
+ /etc/apparmor.d/abstractions/php 130943526b6654357cf5098e4a810d15
+ /etc/apparmor.d/abstractions/php5 491c7cb0bc6d38adbe874d782359ca33
+ /etc/apparmor.d/abstractions/postfix-common 01ab59eb3ee004960446eb8afbc48bcb
+ /etc/apparmor.d/abstractions/private-files 16339bf6bb6f98586eebe898ec2be0ef
+ /etc/apparmor.d/abstractions/private-files-strict d74950f8fd6025b2984bc5840b5c8b3c
+ /etc/apparmor.d/abstractions/python dfd782e3dc74329f85272c9824a50485
+ /etc/apparmor.d/abstractions/qt5 3ca990f9c74472aceebbd04d4ee61cb7
+ /etc/apparmor.d/abstractions/qt5-compose-cache-write a55aa04f2353ecf56f504a6534a7c934
+ /etc/apparmor.d/abstractions/qt5-settings-write 1faa9f6bb0a8a1221c11ae710bd9ded1
+ /etc/apparmor.d/abstractions/recent-documents-write be66dcdeafa30f11b8c499e52913fe13
+ /etc/apparmor.d/abstractions/ruby 2747c396fa14819b92683e23e8f5a889
+ /etc/apparmor.d/abstractions/samba 4cf477e098b91331621dfb729cf0c22e
+ /etc/apparmor.d/abstractions/smbpass b4d3be08dff2a9e3b4f1a18ddb65c63c
+ /etc/apparmor.d/abstractions/ssl_certs 3bdba09464a2609bc0e648c131af2814
+ /etc/apparmor.d/abstractions/ssl_keys 11c1a0c7b12e9b00963c75cfc2a5fce3
+ /etc/apparmor.d/abstractions/svn-repositories 8bc8a123d9ce516c53b818b8a4fc0ed1
+ /etc/apparmor.d/abstractions/ubuntu-bittorrent-clients 1398edfc93d57694774bcad9b83e6764
+ /etc/apparmor.d/abstractions/ubuntu-browsers 1ea182fb18a5fd3c717d475b3255dc32
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/java 8d317346861631f470d1f7e9bc92105f
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/kde 15541761a5dbdc5ccd12e85e2afe4094
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/mailto e60b3e4611a14d835d8b6fe0ffe27fc2
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/multimedia a4d49472876b6cfc23530f853ce4c7ea
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/plugins-common 07e327f4e32e2333db1f609c87831b65
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/productivity dd54584ceece9aa1ee9c3c71418cd9ae
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/text-editors 006c96f21261b0c15e2f453527136973
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/ubuntu-integration a3146cbc94bc1d8172fa09135fb82d7c
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/ubuntu-integration-xul a6d33002626e1d9a81a490e2f61509fa
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/user-files 3e31dcbbf3c77dc50d31245357ad2c4c
+ /etc/apparmor.d/abstractions/ubuntu-console-browsers d560f0509cdc8ffcdfa1dc115eee88f1
+ /etc/apparmor.d/abstractions/ubuntu-console-email 1ebfacc8ac5cfba7f3d59baceae52af8
+ /etc/apparmor.d/abstractions/ubuntu-email d26f79efcadae3acb5f26ec693da011d
+ /etc/apparmor.d/abstractions/ubuntu-feed-readers b8eb233df01672f4941357487b39cda9
+ /etc/apparmor.d/abstractions/ubuntu-gnome-terminal 886de107666e17033b11aa3abb1ce054
+ /etc/apparmor.d/abstractions/ubuntu-helpers b28b05afe5f014e585fefe86b1c75225
+ /etc/apparmor.d/abstractions/ubuntu-konsole 2ba4958d99c66160f118b5cda90b26c7
+ /etc/apparmor.d/abstractions/ubuntu-media-players ff25e51b62d2bf5146134ae3c6530c6b
+ /etc/apparmor.d/abstractions/ubuntu-unity7-base 9adb20c938466802c326a75667d06a3f
+ /etc/apparmor.d/abstractions/ubuntu-unity7-launcher 96f03042c5465f46ddadf15691507414
+ /etc/apparmor.d/abstractions/ubuntu-unity7-messaging 4b9196db0bc697cb80f7e211edc78ae0
+ /etc/apparmor.d/abstractions/ubuntu-xterm bef5766269999b9e73ad6e11dd7930bd
+ /etc/apparmor.d/abstractions/user-download 87e37fbec5bf0c055db102d71205e2a0
+ /etc/apparmor.d/abstractions/user-mail c9951880d0b3d64365a870320fbc4d50
+ /etc/apparmor.d/abstractions/user-manpages c59f25e289e9a426807ab5830136aa42
+ /etc/apparmor.d/abstractions/user-tmp 93247b3296a7f0bff353eb9ee11fba06
+ /etc/apparmor.d/abstractions/user-write 5d5f3787434d3723fde32929c1496e49
+ /etc/apparmor.d/abstractions/video 0074a8698dbf6469986df3bdf5cdef6d
+ /etc/apparmor.d/abstractions/vulkan 3b93e4afbd664b52f34eba4f80ab1353
+ /etc/apparmor.d/abstractions/wayland ba356d31c77b2505149d3635464f1f48
+ /etc/apparmor.d/abstractions/web-data 36eb024800c81ef69733027f1a27a907
+ /etc/apparmor.d/abstractions/winbind 3b37bfd8193e84c6d08809750346e7c1
+ /etc/apparmor.d/abstractions/wutmp 3cb05ef8e125c7c3edf00a505dd9e68f
+ /etc/apparmor.d/abstractions/xad 0b2fdc7be71e977e240d77338f414ec7
+ /etc/apparmor.d/abstractions/xdg-desktop d891f70210acc01e42c525012a1c3fc6
+ /etc/apparmor.d/local/README b2c6b40577b4099c584cdf731f5aeb0b
+ /etc/apparmor.d/nvidia_modprobe 24fbec2e0874828e12a24843c87b01ad
+ /etc/apparmor.d/tunables/alias 45dca5dd72a6c862d27caa936e6c00ad
+ /etc/apparmor.d/tunables/apparmorfs 5797c1a5b267c3f51d983ab8daf8f587
+ /etc/apparmor.d/tunables/dovecot 1b0d5ec63a9c87387142bdb2c94e7ede
+ /etc/apparmor.d/tunables/global 30051273dfdb88155135f0890579293a
+ /etc/apparmor.d/tunables/home ec0b11e815b30dc6fbf4d05a41aff9f5
+ /etc/apparmor.d/tunables/home.d/site.local 3b274206fb06833ee3e151e351dad51b
+ /etc/apparmor.d/tunables/kernelvars 5d30bf3c3c6e33927ba26784985ed8ab
+ /etc/apparmor.d/tunables/multiarch 6ebecd63690d4a53f3e7ff6ae48941ca
+ /etc/apparmor.d/tunables/multiarch.d/site.local 3c9eef1fbfb41fc452060086262e7bcb
+ /etc/apparmor.d/tunables/proc ffaa055ceb36031c973ffaece22a5fc0
+ /etc/apparmor.d/tunables/securityfs 45d73edb5f03d141634ec6a5ba2b10f3
+ /etc/apparmor.d/tunables/share a15f039c6615aa63acbec04b313f08f2
+ /etc/apparmor.d/tunables/sys 30f2fdf4695c26642ea02b5a2063cfbc
+ /etc/apparmor.d/tunables/xdg-user-dirs 602eaa969d2dfa00a0ec16eed9b60b7f
+ /etc/apparmor/parser.conf 6163eb18e8dd7124c639b61aae91fa23
+ /etc/init.d/apparmor 42e157dc91f6554abefa2160c2bc42db
+Description: user-space parser utility for AppArmor
+ apparmor provides the system initialization scripts needed to use the
+ AppArmor Mandatory Access Control system, including the AppArmor Parser
+ which is required to convert AppArmor text profiles into machine-readable
+ policies that are loaded into the kernel for use with the AppArmor Linux
+ Security Module.
+Homepage: http://apparmor.net/
+
 Package: apt
 Status: install ok installed
 Priority: required
@@ -65,7 +215,7 @@ Description: commandline package manager
   * apt-key as an interface to manage authentication keys
 
 Package: apt-utils
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 1127
@@ -164,7 +314,7 @@ Description: GNU Bourne Again SHell
 Homepage: http://tiswww.case.edu/php/chet/bash/bashtop.html
 
 Package: bsdmainutils
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: utils
 Installed-Size: 587
@@ -177,9 +327,9 @@ Depends: libbsd0 (>= 0.2.0), libc6 (>= 2.14), libtinfo6 (>= 6), bsdutils (>= 3.0
 Suggests: cpp, wamerican | wordlist, whois, vacation
 Breaks: bsdutils (<< 1:2.13-11)
 Conffiles:
- /etc/calendar/default newconffile
- /etc/cron.daily/bsdmainutils newconffile
- /etc/default/bsdmainutils newconffile
+ /etc/calendar/default f499e79b0d2d685aa5ae7e1013940b96
+ /etc/cron.daily/bsdmainutils 559387f792462a62e3efb1d573e38d11
+ /etc/default/bsdmainutils bded239f4fea461cc5c92c3bd5a28cc9
 Description: collection of more utilities from FreeBSD
  This package contains lots of small programs many people expect to find when
  they use a BSD-style Unix system.
@@ -212,6 +362,58 @@ Description: basic utilities from 4.4BSD-Lite
  Debian system: logger, renice, script, scriptreplay, and wall. The
  remaining standard BSD utilities are provided by bsdmainutils.
 
+Package: busybox
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 768
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Architecture: amd64
+Version: 1:1.30.1-4
+Replaces: busybox-static
+Depends: libc6 (>= 2.28)
+Breaks: initramfs-tools (<< 0.99)
+Conflicts: busybox-static
+Description: Tiny utilities for small and embedded systems
+ BusyBox combines tiny versions of many common UNIX utilities into a single
+ small executable. It provides minimalist replacements for the most common
+ utilities you would usually find on your desktop system (i.e., ls, cp, mv,
+ mount, tar, etc.). The utilities in BusyBox generally have fewer options than
+ their full-featured GNU cousins; however, the options that are included
+ provide the expected functionality and behave very much like their GNU
+ counterparts.
+ .
+ This package installs the BusyBox binary but does not install
+ symlinks for any of the supported utilities. Some of the utilities
+ can be used in the system by installing the busybox-syslogd,
+ busybox-udhcpc or busybox-udhcpd packages.
+Homepage: http://www.busybox.net
+
+Package: bzip2
+Status: install ok installed
+Priority: standard
+Section: utils
+Installed-Size: 196
+Maintainer: Anibal Monsalve Salazar <anibal@debian.org>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 1.0.6-9.2~deb10u1
+Replaces: libbz2 (<< 0.9.5d-3)
+Depends: libbz2-1.0 (= 1.0.6-9.2~deb10u1), libc6 (>= 2.14)
+Suggests: bzip2-doc
+Description: high-quality block-sorting file compressor - utilities
+ bzip2 is a freely available, patent free, data compressor.
+ .
+ bzip2 compresses files using the Burrows-Wheeler block-sorting text
+ compression algorithm, and Huffman coding.  Compression is generally
+ considerably better than that achieved by more conventional
+ LZ77/LZ78-based compressors, and approaches the performance of the PPM
+ family of statistical compressors.
+ .
+ The archive file format of bzip2 (.bz2) is incompatible with that of its
+ predecessor, bzip (.bz).
+Homepage: https://web.archive.org/web/20180801004107/http://www.bzip.org/
+
 Package: coreutils
 Essential: yes
 Status: install ok installed
@@ -239,7 +441,7 @@ Description: GNU core utilities
 Homepage: http://gnu.org/software/coreutils
 
 Package: cpio
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: utils
 Installed-Size: 1005
@@ -258,7 +460,7 @@ Description: GNU cpio -- a program to manage archives of files
 Homepage: http://www.gnu.org/software/cpio/
 
 Package: cron
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 263
@@ -272,15 +474,15 @@ Pre-Depends: init-system-helpers (>= 1.54~)
 Recommends: default-mta | mail-transport-agent
 Suggests: anacron (>= 2.0-1), logrotate, checksecurity
 Conffiles:
- /etc/cron.d/.placeholder newconffile
- /etc/cron.daily/.placeholder newconffile
- /etc/cron.hourly/.placeholder newconffile
- /etc/cron.monthly/.placeholder newconffile
- /etc/cron.weekly/.placeholder newconffile
- /etc/crontab newconffile
- /etc/default/cron newconffile
- /etc/init.d/cron newconffile
- /etc/pam.d/cron newconffile
+ /etc/cron.d/.placeholder e5e12910bf011222160404d7bdb824f2
+ /etc/cron.daily/.placeholder e5e12910bf011222160404d7bdb824f2
+ /etc/cron.hourly/.placeholder e5e12910bf011222160404d7bdb824f2
+ /etc/cron.monthly/.placeholder e5e12910bf011222160404d7bdb824f2
+ /etc/cron.weekly/.placeholder e5e12910bf011222160404d7bdb824f2
+ /etc/crontab 44df62f8c671c9306af920e2839cda53
+ /etc/default/cron eae0d979b5007d2af41540d8c2631359
+ /etc/init.d/cron 4824366b523de668591f5b6e258c7043
+ /etc/pam.d/cron 11e788a7f7cd5477b10da2c7fd5ecdf0
 Description: process scheduling daemon
  The cron daemon is a background process that runs particular programs at
  particular times (for example, every minute, day, week, or month), as
@@ -341,7 +543,7 @@ Description: Debian configuration management system
  use Debconf to ask questions when they are installed.
 
 Package: debconf-i18n
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: localization
 Installed-Size: 781
@@ -430,7 +632,7 @@ Description: File comparison utilities
 Homepage: http://www.gnu.org/software/diffutils/
 
 Package: dmidecode
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: utils
 Installed-Size: 201
@@ -552,6 +754,23 @@ Description: collection of partitioning utilities
  The sfdisk utility is mostly for automation and scripting uses.
 Important: yes
 
+Package: file
+Status: install ok installed
+Priority: standard
+Section: utils
+Installed-Size: 103
+Maintainer: Christoph Biedl <debian.axhn@manchmal.in-ulm.de>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 1:5.35-4+deb10u2
+Depends: libc6 (>= 2.4), libmagic1 (= 1:5.35-4+deb10u2), zlib1g (>= 1:1.1.4)
+Description: Recognize the type of data in a file using "magic" numbers
+ The file command is "a file type guesser", a command-line tool that
+ tells you in words what kind of data a file contains.
+ .
+ This package contains the file program itself.
+Homepage: https://www.darwinsys.com/file/
+
 Package: findutils
 Essential: yes
 Status: install ok installed
@@ -572,6 +791,53 @@ Description: utilities for finding files--find, xargs
  been split off into a separate package.
 Homepage: https://savannah.gnu.org/projects/findutils/
 
+Package: firmware-linux-free
+Status: install ok installed
+Priority: optional
+Section: kernel
+Installed-Size: 68
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Source: firmware-free
+Version: 3.4
+Suggests: initramfs-tools
+Description: Binary firmware for various drivers in the Linux kernel
+ This package contains firmware which was previously included in the Linux
+ kernel and which is compliant with the Debian Free Software Guidelines.
+ .
+ Most firmware previously included in the Linux kernel is non-free and has
+ been moved to the firmware-linux-nonfree package.
+ .
+ Contents:
+  * AV7110 DVB card firmware (av7110/bootcode.bin)
+  * Atheros AR9170 free firmware for use with carl9170 (carl9170-1.fw)
+  * 3Com Megahertz 3CCFEM556 CIS fix (cis/3CCFEM556.cis)
+  * 3Com Megahertz 3CXEM556 CIS fix (cis/3CXEM556.cis)
+  * Advantech COMpad-32/85 CIS fix (cis/COMpad2.cis)
+  * Advantech COMpad-32/85B-4 CIS fix (cis/COMpad4.cis)
+  * NSC DP83903 PCMCIA Ethernet card CIS fix (cis/DP83903.cis)
+  * Allied Telesis LA-PCM CIS fix (cis/LA-PCM.cis)
+  * MultiTech PCMCIA 56K DataFax CIS fix (cis/MT5634ZLX.cis)
+  * NDC PCMCIA Ethernet card CIS fix (cis/NE2K.cis)
+  * EN2218-LAN/MODEM CIS fix (cis/PCMLM28.cis)
+  * PreMax PE-200 CIS fix (cis/PE-200.cis)
+  * LanPro EP-4000A CIS fix (cis/PE520.cis)
+  * RS-COM 2P CIS fix (cis/RS-COM-2P.cis)
+  * Sierra Aircard 555 CIS fix (cis/SW_555_SER.cis)
+  * Sierra Wireless AC710/AC750 CIS fix (cis/SW_7xx_SER.cis)
+  * Sierra Wireless AC850/AC860 CIS fix (cis/SW_8xx_SER.cis)
+  * Tamarack PCMCIA Ethernet card CIS fix (cis/tamarack.cis)
+  * Atari Falcon DSP56001 firmware (dsp56k/bootstrap.bin)
+  * Intel C600 SAS/SATA controller default parameters, version 1.3
+    (isci/isci_firmware.bin)
+  * Keyspan USA-19 firmware (keyspan_pda/keyspan_pda.fw)
+  * Xircom PGSDB9/Entrega PortGear firmware (keyspan_pda/xircom_pgs.fw)
+  * USB-DUX firmware (usbdux_firmware.bin)
+  * USB-DUXfast firmware (usbduxfast_firmware.bin)
+  * USB-DUXsigma firmware (usbduxsigma_firmware.bin)
+Homepage: http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git
+
 Package: gcc-8-base
 Status: install ok installed
 Priority: optional
@@ -589,7 +855,7 @@ Description: GCC, the GNU Compiler Collection (base package)
 Homepage: http://gcc.gnu.org/
 
 Package: gdbm-l10n
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: localization
 Installed-Size: 275
@@ -608,6 +874,22 @@ Description: GNU dbm database routines (translation files)
  This package provides translations for messages, generated by
  library routines and programs, provided by 'gdbtool' package.
 Homepage: https://gnu.org/software/gdbm
+
+Package: gettext-base
+Status: install ok installed
+Priority: standard
+Section: utils
+Installed-Size: 744
+Maintainer: Santiago Vila <sanvila@debian.org>
+Architecture: amd64
+Multi-Arch: foreign
+Source: gettext
+Version: 0.19.8.1-9
+Depends: libc6 (>= 2.14)
+Description: GNU Internationalization utilities for the base system
+ This package includes the gettext and ngettext programs which allow
+ other packages to internationalize the messages given by shell scripts.
+Homepage: http://www.gnu.org/software/gettext/
 
 Package: gpgv
 Status: install ok installed
@@ -663,6 +945,131 @@ Description: GNU grep, egrep and fgrep
  will run more slowly, however.)
 Homepage: http://www.gnu.org/software/grep/
 
+Package: grub-common
+Status: install ok installed
+Priority: optional
+Section: admin
+Installed-Size: 17716
+Maintainer: GRUB Maintainers <pkg-grub-devel@alioth-lists.debian.net>
+Architecture: amd64
+Multi-Arch: foreign
+Source: grub2
+Version: 2.06-3~deb10u1
+Replaces: grub-coreboot (<< 2.00-4), grub-efi (<< 1.99-1), grub-efi-amd64 (<< 2.00-4), grub-efi-ia32 (<< 2.00-4), grub-efi-ia64 (<< 2.00-4), grub-ieee1275 (<< 2.00-4), grub-linuxbios (<< 1.96+20080831-1), grub-pc (<< 2.00-4), grub-yeeloong (<< 2.00-4), init-select
+Depends: libc6 (>= 2.28), libdevmapper1.02.1 (>= 2:1.02.36), libefiboot1 (>= 37), libefivar1 (>= 37), libfreetype6 (>= 2.2.1), libfuse2 (>= 2.8.4-1.4), liblzma5 (>= 5.1.1alpha+20120614), gettext-base
+Recommends: os-prober (>= 1.33)
+Suggests: multiboot-doc, grub-emu, mtools, xorriso (>= 0.5.6.pl00), desktop-base (>= 4.0.6), console-setup
+Breaks: apport (<< 2.1.1), friendly-recovery (<< 0.2.13), lupin-support (<< 0.55), mdadm (<< 2.6.7-2)
+Conflicts: init-select
+Conffiles:
+ /etc/default/grub.d/init-select.cfg 86dea2a78312ca80f740098987d9c0fb
+ /etc/grub.d/00_header cd52708cba4d78d7ef96176258d4593d
+ /etc/grub.d/05_debian_theme 7af00bf2d834b3104688c9cbf40b23b3
+ /etc/grub.d/10_linux 16adfed0ec58a4db1e3f3f38e49f06fc
+ /etc/grub.d/20_linux_xen 80253021369176084e3483b13c9e689e
+ /etc/grub.d/30_os-prober bbd38f8ff7af7c7c68c4ded04ba5f516
+ /etc/grub.d/30_uefi-firmware ed41aff510f9176cdbbecfe1a964e4c5
+ /etc/grub.d/40_custom babe7de352fe18de5a238569cf4b8a11
+ /etc/grub.d/41_custom 1d876baff8ca3841aa6ba057e881a2e4
+ /etc/grub.d/README be58f42dfe74feb6eeb98c6a843c743f
+Description: GRand Unified Bootloader (common files)
+ This package contains common files shared by the distinct flavours of GRUB.
+ It is shared between GRUB Legacy and GRUB 2, although a number of files
+ specific to GRUB 2 are here as long as they do not break GRUB Legacy.
+ .
+ grub-mkrescue needs the suggested packages mtools (for UEFI targets) and
+ xorriso.
+Homepage: https://www.gnu.org/software/grub/
+
+Package: grub-pc
+Status: install ok unpacked
+Priority: optional
+Section: admin
+Installed-Size: 534
+Maintainer: GRUB Maintainers <pkg-grub-devel@alioth-lists.debian.net>
+Architecture: amd64
+Multi-Arch: foreign
+Source: grub2
+Version: 2.06-3~deb10u1
+Replaces: grub, grub-common (<= 1.97~beta2-1), grub-coreboot, grub-efi-amd64, grub-efi-ia32, grub-ieee1275, grub-legacy, grub2 (<< 2.06-3~deb10u1)
+Depends: debconf (>= 0.5) | debconf-2.0, grub-common (= 2.06-3~deb10u1), grub2-common (= 2.06-3~deb10u1), grub-pc-bin (= 2.06-3~deb10u1), ucf
+Conflicts: grub (<< 0.97-54), grub-coreboot, grub-efi-amd64, grub-efi-ia32, grub-ieee1275, grub-legacy, grub-xen
+Description: GRand Unified Bootloader, version 2 (PC/BIOS version)
+ GRUB is a portable, powerful bootloader.  This version of GRUB is based on a
+ cleaner design than its predecessors, and provides the following new features:
+ .
+  - Scripting in grub.cfg using BASH-like syntax.
+  - Support for modern partition maps such as GPT.
+  - Modular generation of grub.cfg via update-grub.  Packages providing GRUB
+    add-ons can plug in their own script rules and trigger updates by invoking
+    update-grub.
+  - VESA-based graphical mode with background image support and complete 24-bit
+    color set.
+  - Support for extended charsets.  Users can write UTF-8 text to their menu
+    entries.
+ .
+ This is a dependency package for a version of GRUB that has been built for
+ use with the traditional PC/BIOS architecture.  Installing this package
+ indicates that this version of GRUB should be the active boot loader.
+Homepage: https://www.gnu.org/software/grub/
+
+Package: grub-pc-bin
+Status: install ok unpacked
+Priority: optional
+Section: admin
+Installed-Size: 3109
+Maintainer: GRUB Maintainers <pkg-grub-devel@alioth-lists.debian.net>
+Architecture: amd64
+Multi-Arch: foreign
+Source: grub2
+Version: 2.06-3~deb10u1
+Replaces: grub-common (<= 1.97~beta2-1), grub-pc (<< 1.99-1), grub2 (<< 2.06-3~deb10u1)
+Depends: libc6 (>= 2.28), libdevmapper1.02.1 (>= 2:1.02.36), grub-common (= 2.06-3~deb10u1)
+Suggests: desktop-base (>= 4.0.6)
+Description: GRand Unified Bootloader, version 2 (PC/BIOS modules)
+ GRUB is a portable, powerful bootloader.  This version of GRUB is based on a
+ cleaner design than its predecessors, and provides the following new features:
+ .
+  - Scripting in grub.cfg using BASH-like syntax.
+  - Support for modern partition maps such as GPT.
+  - Modular generation of grub.cfg via update-grub.  Packages providing GRUB
+    add-ons can plug in their own script rules and trigger updates by invoking
+    update-grub.
+  - VESA-based graphical mode with background image support and complete 24-bit
+    color set.
+  - Support for extended charsets.  Users can write UTF-8 text to their menu
+    entries.
+ .
+ This package contains GRUB modules that have been built for use with the
+ traditional PC/BIOS architecture.  It can be installed in parallel with
+ other flavours, but will not automatically install GRUB as the active boot
+ loader nor automatically update grub.cfg on upgrade unless grub-pc is also
+ installed.
+Homepage: https://www.gnu.org/software/grub/
+
+Package: grub2-common
+Status: install ok installed
+Priority: optional
+Section: admin
+Installed-Size: 1332
+Maintainer: GRUB Maintainers <pkg-grub-devel@alioth-lists.debian.net>
+Architecture: amd64
+Multi-Arch: foreign
+Source: grub2
+Version: 2.06-3~deb10u1
+Replaces: grub, grub-cloud-amd64 (<< 0.0.4), grub-common (<< 1.99-1), grub-coreboot (<< 2.02+dfsg1-7), grub-doc (<< 0.97-32), grub-efi-amd64 (<< 2.02+dfsg1-7), grub-efi-arm (<< 2.02+dfsg1-7), grub-efi-arm64 (<< 2.02+dfsg1-7), grub-efi-ia32 (<< 2.02+dfsg1-7), grub-efi-ia64 (<< 2.02+dfsg1-7), grub-ieee1275 (<< 2.02+dfsg1-7), grub-legacy, grub-legacy-doc (<< 0.97-59), grub-pc (<< 2.02+dfsg1-7), grub-uboot (<< 2.02+dfsg1-7), grub-xen (<< 2.02+dfsg1-7), grub-yeeloong (<< 2.02+dfsg1-7)
+Depends: grub-common (= 2.06-3~deb10u1), dpkg (>= 1.15.4) | install-info, libc6 (>= 2.28), libdevmapper1.02.1 (>= 2:1.02.36), libefiboot1 (>= 37), libefivar1 (>= 37), liblzma5 (>= 5.1.1alpha+20120614)
+Breaks: grub (<< 0.97-54), grub-cloud-amd64 (<< 0.0.4), grub-coreboot (<< 2.02+dfsg1-7), grub-doc (<< 0.97-32), grub-efi-amd64 (<< 2.02+dfsg1-7), grub-efi-arm (<< 2.02+dfsg1-7), grub-efi-arm64 (<< 2.02+dfsg1-7), grub-efi-ia32 (<< 2.02+dfsg1-7), grub-efi-ia64 (<< 2.02+dfsg1-7), grub-ieee1275 (<< 2.02+dfsg1-7), grub-legacy-doc (<< 0.97-59), grub-pc (<< 2.02+dfsg1-7), grub-uboot (<< 2.02+dfsg1-7), grub-xen (<< 2.02+dfsg1-7), grub-yeeloong (<< 2.02+dfsg1-7), shim (<< 0.9+1474479173.6c180c6-0ubuntu1~)
+Conflicts: grub-legacy
+Conffiles:
+ /etc/kernel/postinst.d/zz-update-grub 5a98abefbfe97dbed36db7899251e433
+ /etc/kernel/postrm.d/zz-update-grub 5a98abefbfe97dbed36db7899251e433
+Description: GRand Unified Bootloader (common files for version 2)
+ This package contains common files shared by the distinct flavours of GRUB.
+ The files in this package are specific to GRUB 2, and would break GRUB
+ Legacy if installed on the same system.
+Homepage: https://www.gnu.org/software/grub/
+
 Package: gzip
 Essential: yes
 Status: install ok installed
@@ -699,7 +1106,7 @@ Description: utility to set/show the host name or domain name
  DNS name, and to display or set its hostname or NIS domain name.
 
 Package: ifupdown
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 217
@@ -713,15 +1120,15 @@ Recommends: isc-dhcp-client | dhcp-client
 Suggests: ppp, rdnssd
 Breaks: systemd (<< 228-3~)
 Conffiles:
- /etc/default/networking newconffile
- /etc/init.d/networking newconffile
+ /etc/default/networking 3f34a1868c2e6cd41caec70c8d1e5659
+ /etc/init.d/networking 11adb3f76369f48e5a8432f8bf8abfd7
 Description: high level tools to configure network interfaces
  This package provides the tools ifup and ifdown which may be used to
  configure (or, respectively, deconfigure) network interfaces based on
  interface definitions in the file /etc/network/interfaces.
 
 Package: init
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: metapackages
 Installed-Size: 21
@@ -766,8 +1173,55 @@ Description: helper tools for all init systems
  specific to systemd at all. Maintainers of other init systems are welcome to
  include their helpers in this package.
 
+Package: initramfs-tools
+Status: install ok triggers-pending
+Priority: optional
+Section: utils
+Installed-Size: 111
+Maintainer: Debian kernel team <debian-kernel@lists.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Version: 0.133+deb10u1
+Provides: linux-initramfs-tool
+Depends: initramfs-tools-core (= 0.133+deb10u1), linux-base
+Suggests: bash-completion
+Breaks: e2fsprogs (<< 1.42.13), initscripts (<< 2.88dsf-59.3~), upstart
+Conflicts: linux-initramfs-tool, usplash (<< 0.5.50)
+Conffiles:
+ /etc/initramfs-tools/update-initramfs.conf e2026d4603e7161efaccca519aeb1297
+ /etc/kernel/postinst.d/initramfs-tools 0d9cc4eb58a5e2726911ca55d7719635
+ /etc/kernel/postrm.d/initramfs-tools f414d7d4a1210624ff6ef6ed96ca7061
+Description: generic modular initramfs generator (automation)
+ This package builds a bootable initramfs for Linux kernel packages.  The
+ initramfs is loaded along with the kernel and is responsible for
+ mounting the root filesystem and starting the main init system.
+Triggers-Pending: update-initramfs
+
+Package: initramfs-tools-core
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 208
+Maintainer: Debian kernel team <debian-kernel@lists.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Source: initramfs-tools
+Version: 0.133+deb10u1
+Replaces: initramfs-tools (<< 0.121~)
+Depends: klibc-utils (>= 2.0.4-8~), cpio (>= 2.12), kmod, udev, coreutils (>= 8.24), e2fsprogs
+Recommends: busybox (>= 1:1.22.0-17~) | busybox-static (>= 1:1.22.0-17~), pigz
+Suggests: bash-completion
+Breaks: busybox (<< 1:1.22.0-17~), busybox-static (<< 1:1.22.0-17~), initramfs-tools (<< 0.121~)
+Conffiles:
+ /etc/initramfs-tools/initramfs.conf 979aaf1f18ea2de9bce7c063866b8d96
+Description: generic modular initramfs generator (core tools)
+ This package contains the mkinitramfs program that can be used to
+ create a bootable initramfs for a Linux kernel.  The initramfs should
+ be loaded along with the kernel and is then responsible for mounting
+ the root filesystem and starting the main init system.
+
 Package: iproute2
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: net
 Installed-Size: 2589
@@ -782,17 +1236,17 @@ Recommends: libatm1 (>= 2.4.1-17~)
 Suggests: iproute2-doc
 Conflicts: arpd, iproute (<< 20130000-1)
 Conffiles:
- /etc/iproute2/bpf_pinning newconffile
- /etc/iproute2/ematch_map newconffile
- /etc/iproute2/group newconffile
- /etc/iproute2/nl_protos newconffile
- /etc/iproute2/rt_dsfield newconffile
- /etc/iproute2/rt_protos newconffile
- /etc/iproute2/rt_protos.d/README newconffile
- /etc/iproute2/rt_realms newconffile
- /etc/iproute2/rt_scopes newconffile
- /etc/iproute2/rt_tables newconffile
- /etc/iproute2/rt_tables.d/README newconffile
+ /etc/iproute2/bpf_pinning fd070252e6e9996bd04d9d59e4ce21eb
+ /etc/iproute2/ematch_map 0e0f36cafc6a9cf76bc704cfd8f96ece
+ /etc/iproute2/group 3aea2c0e0dd75e13a5f8f48f2936915f
+ /etc/iproute2/nl_protos 393e42fa549d0974eb66d576675779c2
+ /etc/iproute2/rt_dsfield 4c80d267a84d350d89d88774efe48a0f
+ /etc/iproute2/rt_protos 7b2dc3e981ec34331766ba9d219670aa
+ /etc/iproute2/rt_protos.d/README 88e45597012c565f9a10ffef1bc14312
+ /etc/iproute2/rt_realms 7137bdf40e8d58c87ac7e3bba503767f
+ /etc/iproute2/rt_scopes 6298b8df09e9bda23ea7da49021ca457
+ /etc/iproute2/rt_tables a1313318d6778fe6b8c680248ef5a463
+ /etc/iproute2/rt_tables.d/README 18bfdabbd4d5b14eae350720ea5ff431
 Description: networking and traffic control tools
  The iproute2 suite is a collection of utilities for networking and
  traffic control.
@@ -803,7 +1257,7 @@ Description: networking and traffic control tools
 Homepage: https://wiki.linuxfoundation.org/networking/iproute2
 
 Package: iptables
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: net
 Installed-Size: 2569
@@ -840,7 +1294,7 @@ Description: administration tools for packet filtering and NAT
 Homepage: http://www.netfilter.org/
 
 Package: iputils-ping
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: net
 Installed-Size: 104
@@ -859,7 +1313,7 @@ Description: Tools to test the reachability of network hosts
  connections.
 
 Package: isc-dhcp-client
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: net
 Installed-Size: 673
@@ -872,9 +1326,9 @@ Depends: libc6 (>= 2.15), libdns-export1104, libisc-export1100, debianutils (>= 
 Recommends: isc-dhcp-common
 Suggests: resolvconf, avahi-autoipd, isc-dhcp-client-ddns
 Conffiles:
- /etc/dhcp/debug newconffile
- /etc/dhcp/dhclient-exit-hooks.d/rfc3442-classless-routes newconffile
- /etc/dhcp/dhclient.conf newconffile
+ /etc/dhcp/debug 521717b5f9e08db15893d3d062c59aeb
+ /etc/dhcp/dhclient-exit-hooks.d/rfc3442-classless-routes 95e21c32fa7f603db75f1dc33db53cf5
+ /etc/dhcp/dhclient.conf 649563ef7a61912664a400a5263958a6
 Description: DHCP client for automatically obtaining an IP address
  This is the Internet Software Consortium's DHCP client.
  .
@@ -890,7 +1344,7 @@ Description: DHCP client for automatically obtaining an IP address
 Homepage: http://www.isc.org
 
 Package: isc-dhcp-common
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: net
 Installed-Size: 148
@@ -907,8 +1361,28 @@ Description: common manpages relevant to all of the isc-dhcp packages
  The dhcp-eval manpage describes evaluation of conditional expressions.
 Homepage: http://www.isc.org
 
+Package: klibc-utils
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 538
+Maintainer: maximilian attems <maks@debian.org>
+Architecture: amd64
+Multi-Arch: foreign
+Source: klibc
+Version: 2.0.6-1+deb10u1
+Depends: libklibc (= 2.0.6-1+deb10u1)
+Breaks: initramfs-tools (<< 0.123~)
+Description: small utilities built with klibc for early boot
+ This package contains a collection of programs that are linked
+ against klibc. These duplicate some of the functionality of a
+ regular Linux toolset, but are typically much smaller than their
+ full-function counterparts.  They are intended for inclusion in
+ initramfs images and embedded systems.
+Homepage: https://git.kernel.org/cgit/libs/klibc/klibc.git
+
 Package: kmod
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 237
@@ -919,14 +1393,14 @@ Version: 26-1
 Depends: libc6 (>= 2.17), liblzma5 (>= 5.1.1alpha+20120614), libssl1.1 (>= 1.1.0), libkmod2 (= 26-1), lsb-base
 Breaks: alsa-base (<= 1.0.25+3), oss-compat (= 4)
 Conffiles:
- /etc/init.d/kmod newconffile
+ /etc/init.d/kmod 82698019c962069b438bd2a82d9fa1e7
 Description: tools for managing Linux kernel modules
  This package contains a set of programs for loading, inserting, and
  removing kernel modules for Linux.
  It replaces module-init-tools.
 
 Package: less
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: text
 Installed-Size: 281
@@ -982,7 +1456,7 @@ Description: changehat AppArmor library
 Homepage: http://apparmor.net/
 
 Package: libapt-inst2.0
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 484
@@ -1132,7 +1606,7 @@ Description: block device ID library
  hard-coded device names and use a logical naming system instead.
 
 Package: libbsd0
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 191
@@ -1178,7 +1652,7 @@ Homepage: https://web.archive.org/web/20180801004107/http://www.bzip.org/
 
 Package: libc-bin
 Essential: yes
-Status: install ok installed
+Status: install ok triggers-pending
 Priority: required
 Section: libs
 Installed-Size: 3494
@@ -1205,6 +1679,7 @@ Description: GNU C Library: Binaries
   * ldd, ldconfig: print/configure shared library dependencies
   * locale, localedef: show/generate locale definitions
   * tzselect, zdump, zic: select/dump/compile time zones
+Triggers-Pending: ldconfig
 Homepage: https://www.gnu.org/software/libc/libc.html
 
 Package: libc6
@@ -1273,7 +1748,7 @@ Description: POSIX 1003.1e capabilities (library)
 Homepage: https://sites.google.com/site/fullycapable/
 
 Package: libcap2-bin
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: utils
 Installed-Size: 111
@@ -1394,7 +1869,7 @@ Description: Linux Kernel Device Mapper userspace library
 Homepage: http://sources.redhat.com/lvm2/
 
 Package: libdns-export1104
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 2416
@@ -1411,8 +1886,40 @@ Description: Exported DNS Shared Library
  This package delivers the exported libdns shared library.
 Homepage: https://www.isc.org/downloads/bind/
 
+Package: libefiboot1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 121
+Maintainer: Debian UEFI Maintainers <debian-efi@lists.debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: efivar
+Version: 37-2+deb10u1
+Depends: libc6 (>= 2.14), libefivar1 (>= 37)
+Breaks: efibootmgr (<< 0.12-2)
+Description: Library to manage UEFI variables
+ Library to allow for the manipulation of UEFI variables related to booting.
+Homepage: https://github.com/rhinstaller/efivar
+
+Package: libefivar1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 162
+Maintainer: Debian UEFI Maintainers <debian-efi@lists.debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: efivar
+Version: 37-2+deb10u1
+Depends: libc6 (>= 2.14)
+Breaks: efibootmgr (<< 0.12-2)
+Description: Library to manage UEFI variables
+ Library to allow for the simple manipulation of UEFI variables.
+Homepage: https://github.com/rhinstaller/efivar
+
 Package: libelf1
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 932
@@ -1432,7 +1939,7 @@ Description: library to read and write ELF files
 Homepage: https://sourceware.org/elfutils/
 
 Package: libestr0
-Status: install ok unpacked
+Status: install ok installed
 Priority: extra
 Section: libs
 Installed-Size: 32
@@ -1448,6 +1955,25 @@ Description: Helper functions for handling strings (lib)
  .
  This package contains the shared library.
 Homepage: http://libestr.sourceforge.net/
+
+Package: libexpat1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 520
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: expat
+Version: 2.2.6-2+deb10u4
+Depends: libc6 (>= 2.25)
+Conflicts: wink (<= 1.5.1060-4)
+Description: XML parsing C library - runtime library
+ This package contains the runtime, shared library of expat, the C
+ library for parsing XML. Expat is a stream-oriented parser in
+ which an application registers handlers for things the parser
+ might find in the XML document (like start tags).
+Homepage: https://libexpat.github.io/
 
 Package: libext2fs2
 Status: install ok installed
@@ -1475,7 +2001,7 @@ Description: ext2/ext3/ext4 file system libraries
 Homepage: http://e2fsprogs.sourceforge.net
 
 Package: libfastjson4
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 68
@@ -1522,6 +2048,68 @@ Description: Foreign Function Interface library runtime
  allows code written in one language to call code written in another
  language.
 Homepage: https://sourceware.org/libffi/
+
+Package: libfreetype6
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 842
+Maintainer: Hugh McMaster <hugh.mcmaster@outlook.com>
+Architecture: amd64
+Multi-Arch: same
+Source: freetype
+Version: 2.9.1-3+deb10u3
+Depends: libc6 (>= 2.14), libpng16-16 (>= 1.6.2-1), zlib1g (>= 1:1.1.4)
+Description: FreeType 2 font engine, shared library files
+ The FreeType project is a team of volunteers who develop free,
+ portable and high-quality software solutions for digital typography.
+ They specifically target embedded systems and focus on providing small,
+ efficient and ubiquitous products.
+ .
+ The FreeType 2 library is their new software font engine.  It has been
+ designed to provide the following important features:
+  * A universal and simple API to manage font files
+  * Support for several font formats through loadable modules
+  * High-quality anti-aliasing
+  * High portability & performance
+ .
+ Supported font formats include:
+  * TrueType files (.ttf) and collections (.ttc)
+  * Type 1 font files both in ASCII (.pfa) or binary (.pfb) format
+  * Type 1 Multiple Master fonts.  The FreeType 2 API also provides
+    routines to manage design instances easily
+  * Type 1 CID-keyed fonts
+  * OpenType/CFF (.otf) fonts
+  * CFF/Type 2 fonts
+  * Adobe CEF fonts (.cef), used to embed fonts in SVG documents with
+    the Adobe SVG viewer plugin.
+  * Windows FNT/FON bitmap fonts
+ .
+ This package contains the files needed to run programs that use the
+ FreeType 2 library.
+Homepage: https://www.freetype.org
+
+Package: libfuse2
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 350
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: fuse
+Version: 2.9.9-1+deb10u1
+Depends: libc6 (>= 2.28)
+Suggests: fuse
+Conflicts: fuse (<< 2.9.9-1+deb10u1)
+Description: Filesystem in Userspace (library)
+ Filesystem in Userspace (FUSE) is a simple interface for userspace programs to
+ export a virtual filesystem to the Linux kernel. It also aims to provide a
+ secure method for non privileged users to create and mount their own filesystem
+ implementations.
+ .
+ This package contains the shared library.
+Homepage: https://github.com/libfuse/libfuse/wiki
 
 Package: libgcc1
 Status: install ok installed
@@ -1634,6 +2222,24 @@ Description: GnuPG development runtime library
  It will likely be renamed "gpgrt" in the future.
 Homepage: https://www.gnupg.org/related_software/libgpg-error/
 
+Package: libgpm2
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 64
+Maintainer: Axel Beckert <abe@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: gpm
+Version: 1.20.7-5
+Depends: libc6 (>= 2.15)
+Suggests: gpm
+Description: General Purpose Mouse - shared library
+ This package provides a library that handles mouse requests
+ and delivers them to applications. See the description for the 'gpm'
+ package for more information.
+Homepage: https://nico.schottelius.org/software/gpm/
+
 Package: libhogweed4
 Status: install ok installed
 Priority: optional
@@ -1728,7 +2334,7 @@ Description: netfilter libip4tc library
 Homepage: http://www.netfilter.org/
 
 Package: libip6tc0
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 120
@@ -1752,7 +2358,7 @@ Description: netfilter libip6tc library
 Homepage: http://www.netfilter.org/
 
 Package: libiptc0
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 98
@@ -1776,7 +2382,7 @@ Description: netfilter libiptc library
 Homepage: http://www.netfilter.org/
 
 Package: libisc-export1100
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 676
@@ -1811,6 +2417,23 @@ Description: JSON manipulation library - shared library
  strings back into the C representation of JSON objects.
 Homepage: https://github.com/json-c/json-c/wiki
 
+Package: libklibc
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 110
+Maintainer: maximilian attems <maks@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: klibc
+Version: 2.0.6-1+deb10u1
+Description: minimal libc subset for use with initramfs
+ klibc is intended to be a minimalistic libc subset for use with
+ initramfs.  It is deliberately written for small size, minimal
+ entanglement, and portability, not speed.  It is definitely a work in
+ progress, and a lot of things are still missing.
+Homepage: https://git.kernel.org/cgit/libs/klibc/klibc.git
+
 Package: libkmod2
 Status: install ok installed
 Priority: optional
@@ -1827,7 +2450,7 @@ Description: libkmod shared library
  listing of kernel modules.
 
 Package: liblocale-gettext-perl
-Status: install ok unpacked
+Status: install ok installed
 Priority: required
 Section: perl
 Installed-Size: 55
@@ -1848,7 +2471,7 @@ Description: module using libc functions for internationalization in Perl
 Homepage: https://metacpan.org/release/gettext
 
 Package: liblognorm5
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 161
@@ -1910,8 +2533,47 @@ Description: XZ-format compression library
  format, use the p7zip package instead.)
 Homepage: https://tukaani.org/xz/
 
+Package: libmagic-mgc
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 5300
+Maintainer: Christoph Biedl <debian.axhn@manchmal.in-ulm.de>
+Architecture: amd64
+Multi-Arch: foreign
+Source: file
+Version: 1:5.35-4+deb10u2
+Replaces: libmagic1 (<< 1:5.28-4~)
+Breaks: libmagic1 (<< 1:5.28-4~)
+Description: File type determination library using "magic" numbers (compiled magic file)
+ This package provides the compiled magic file "magic.mgc". It has
+ been separated from libmagic1 in order to meet the multiarch
+ requirements without breaking applications that expect this file
+ at its absolute path.
+Homepage: https://www.darwinsys.com/file/
+
+Package: libmagic1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 233
+Maintainer: Christoph Biedl <debian.axhn@manchmal.in-ulm.de>
+Architecture: amd64
+Multi-Arch: same
+Source: file
+Version: 1:5.35-4+deb10u2
+Depends: libc6 (>= 2.15), zlib1g (>= 1:1.1.4), libmagic-mgc (= 1:5.35-4+deb10u2)
+Suggests: file
+Conffiles:
+ /etc/magic 272913026300e7ae9b5e2d51f138e674
+ /etc/magic.mime 272913026300e7ae9b5e2d51f138e674
+Description: Recognize the type of data in a file using "magic" numbers - library
+ This library can be used to classify files according to magic number
+ tests. It implements the core functionality of the file command.
+Homepage: https://www.darwinsys.com/file/
+
 Package: libmnl0
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: libs
 Installed-Size: 46
@@ -1964,8 +2626,26 @@ Depends: libblkid1 (>= 2.17.2), libc6 (>= 2.25), libselinux1 (>= 2.6-3~)
 Description: device mounting library
  This device mounting library is used by mount and umount helpers.
 
+Package: libmpdec2
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 254
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: mpdecimal
+Version: 2.4.2-2
+Replaces: libmpdec2.3
+Depends: libc6 (>= 2.14)
+Breaks: libmpdec2.3
+Description: library for decimal floating point arithmetic (runtime library)
+ mpdecimal is a package for correctly-rounded arbitrary precision decimal
+ floating point arithmetic.
+Homepage: http://www.bytereef.org/mpdecimal/index.html
+
 Package: libncurses6
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 334
@@ -2005,7 +2685,7 @@ Description: shared libraries for terminal handling (wide character support)
 Homepage: https://invisible-island.net/ncurses/
 
 Package: libnetfilter-conntrack3
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 138
@@ -2050,7 +2730,7 @@ Description: low level cryptographic library (symmetric and one-way cryptos)
 Homepage: http://www.lysator.liu.se/~nisse/nettle/
 
 Package: libnewt0.52
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 374
@@ -2071,7 +2751,7 @@ Description: Not Erik's Windowing Toolkit - text mode windowing with slang
 Homepage: https://pagure.io/newt
 
 Package: libnfnetlink0
-Status: install ok unpacked
+Status: install ok installed
 Priority: extra
 Section: libs
 Installed-Size: 41
@@ -2089,7 +2769,7 @@ Description: Netfilter netlink library
  respective users and/or management tools in userspace.
 
 Package: libnftnl11
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 212
@@ -2241,8 +2921,27 @@ Description: Old Perl 5 Compatible Regular Expression Library - runtime files
  .
  This package contains the runtime libraries.
 
+Package: libpng16-16
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 439
+Maintainer: Maintainers of libpng1.6 packages <libpng1.6@packages.debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: libpng1.6
+Version: 1.6.36-6
+Depends: libc6 (>= 2.14), zlib1g (>= 1:1.2.11.dfsg)
+Description: PNG library - runtime (version 1.6)
+ libpng is a library implementing an interface for reading and writing
+ PNG (Portable Network Graphics) format files.
+ .
+ This package contains the runtime library files needed to run software
+ using libpng.
+Homepage: http://libpng.org/pub/png/libpng.html
+
 Package: libpopt0
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 222
@@ -2266,7 +2965,7 @@ Description: lib for parsing cmdline parameters
 Homepage: http://rpm5.org/
 
 Package: libprocps7
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 122
@@ -2284,6 +2983,86 @@ Description: library for accessing process information from /proc
  This package contains the shared libraries necessary to run programs
  compiled with libprocps.
 Homepage: https://gitlab.com/procps-ng/procps
+
+Package: libpython3-stdlib
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 37
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: python3-defaults
+Version: 3.7.3-1
+Depends: libpython3.7-stdlib (>= 3.7.3-1~)
+Description: interactive high-level object-oriented language (default python3 version)
+ Python, the high-level, interactive object oriented language,
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package is a dependency package, which depends on Debian's default
+ Python 3 version (currently v3.7).
+Homepage: https://www.python.org/
+
+Package: libpython3.7-minimal
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 3903
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: python3.7
+Version: 3.7.3-2+deb10u3
+Depends: libc6 (>= 2.4), libssl1.1 (>= 1.1.1)
+Recommends: libpython3.7-stdlib
+Breaks: libpython3.7-stdlib (<< 3.7.0~b2-1~)
+Conflicts: binfmt-support (<< 1.1.2), libpython3.7-stdlib (<< 3.7.0~b2-1~)
+Conffiles:
+ /etc/python3.7/sitecustomize.py d6b276695157bde06a56ba1b2bc53670
+Description: Minimal subset of the Python language (version 3.7)
+ This package contains some essential modules. It is normally not
+ used on it's own, but as a dependency of python3.7-minimal.
+
+Package: libpython3.7-stdlib
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 8143
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: python3.7
+Version: 3.7.3-2+deb10u3
+Replaces: libpython3.7-testsuite (<< 3.7.2-3), python3-distutils (<< 3.6.5~rc1-2)
+Depends: libpython3.7-minimal (= 3.7.3-2+deb10u3), mime-support, libbz2-1.0, libc6 (>= 2.28), libdb5.3, libffi6 (>= 3.0.4), liblzma5 (>= 5.1.1alpha+20120614), libmpdec2, libncursesw6 (>= 6), libreadline7 (>= 7.0~beta), libsqlite3-0 (>= 3.7.15), libtinfo6 (>= 6), libuuid1 (>= 2.20.1)
+Breaks: libmpdec2 (<< 2.4.2), libpython3.7-testsuite (<< 3.7.2-3), python3-distutils (<< 3.6.5~rc1-2), python3-tk (<< 3.6.4~rc1-2)
+Description: Interactive high-level object-oriented language (standard library, version 3.7)
+ Python is a high-level, interactive, object-oriented language. Its 3.7 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package contains Python 3.7's standard library. It is normally not
+ used on its own, but as a dependency of python3.7.
+
+Package: libreadline7
+Status: install ok installed
+Priority: important
+Section: libs
+Installed-Size: 416
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: readline
+Version: 7.0-5
+Depends: readline-common, libc6 (>= 2.15), libtinfo6 (>= 6)
+Description: GNU readline and history libraries, run-time libraries
+ The GNU readline library aids in the consistency of user interface
+ across discrete programs that need to provide a command line
+ interface.
+ .
+ The GNU history library provides a consistent user interface for
+ recalling lines of previously typed input.
 
 Package: libseccomp2
 Status: install ok installed
@@ -2425,7 +3204,7 @@ Description: SELinux library for manipulating binary security policies
 Homepage: http://userspace.selinuxproject.org/
 
 Package: libslang2
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 1627
@@ -2459,6 +3238,24 @@ Version: 2.33.1-0.1
 Depends: libc6 (>= 2.25)
 Description: smart column output alignment library
  This smart column output alignment library is used by fdisk utilities.
+
+Package: libsqlite3-0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 1288
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: sqlite3
+Version: 3.27.2-3+deb10u1
+Depends: libc6 (>= 2.28)
+Breaks: python-migrate (<< 0.11.0-4~), python3-migrate (<< 0.11.0-4~)
+Description: SQLite 3 shared library
+ SQLite is a C library that implements an SQL database engine.
+ Programs that link with the SQLite library can have SQL database
+ access without running a separate RDBMS process.
+Homepage: https://www.sqlite.org/
 
 Package: libss2
 Status: install ok installed
@@ -2562,7 +3359,7 @@ Description: Manage ASN.1 structures (runtime)
 Homepage: http://www.gnu.org/software/libtasn1/
 
 Package: libtext-charwidth-perl
-Status: install ok unpacked
+Status: install ok installed
 Priority: required
 Section: perl
 Installed-Size: 43
@@ -2579,7 +3376,7 @@ Description: get display widths of characters on the terminal
 Homepage: http://search.cpan.org/search?module=Text::CharWidth
 
 Package: libtext-iconv-perl
-Status: install ok unpacked
+Status: install ok installed
 Priority: required
 Section: perl
 Installed-Size: 50
@@ -2598,7 +3395,7 @@ Description: converts between character sets in Perl
 Homepage: http://search.cpan.org/search?module=Text::Iconv
 
 Package: libtext-wrapi18n-perl
-Status: install ok unpacked
+Status: install ok installed
 Priority: required
 Section: perl
 Installed-Size: 26
@@ -2694,7 +3491,7 @@ Description: Universally Unique ID library
  See RFC 4122 for more information.
 
 Package: libxtables12
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 149
@@ -2732,6 +3529,60 @@ Description: fast lossless compression algorithm
  This package contains the shared library.
 Homepage: https://github.com/facebook/zstd
 
+Package: linux-base
+Status: install ok installed
+Priority: optional
+Section: kernel
+Installed-Size: 82
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Version: 4.6
+Replaces: kernel-common (<= 13.018+nmu1)
+Depends: debconf (>= 0.5) | debconf-2.0
+Breaks: kernel-common (<= 13.018+nmu1)
+Description: Linux image base package
+ This package contains files and support scripts for all Linux
+ images.
+
+Package: linux-image-4.19.0-21-amd64
+Status: install ok installed
+Priority: optional
+Section: kernel
+Installed-Size: 264013
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Architecture: amd64
+Source: linux-signed-amd64 (4.19.249+2)
+Version: 4.19.249-2
+Replaces: linux-image-4.19.0-21-amd64-unsigned
+Depends: kmod, linux-base (>= 4.3~), initramfs-tools (>= 0.120+deb8u2) | linux-initramfs-tool
+Recommends: firmware-linux-free, apparmor
+Suggests: linux-doc-4.19, debian-kernel-handbook, grub-pc | grub-efi-amd64 | extlinux
+Breaks: initramfs-tools (<< 0.120+deb8u2), xserver-xorg-input-vmmouse (<< 1:13.0.99)
+Conflicts: linux-image-4.19.0-21-amd64-unsigned
+Description: Linux 4.19 for 64-bit PCs (signed)
+ The Linux kernel 4.19 and modules for use on PCs with AMD64, Intel 64 or
+ VIA Nano processors.
+ .
+ The kernel image and modules are signed for use with Secure Boot.
+Built-Using: linux (= 4.19.249-2)
+Homepage: https://www.kernel.org/
+
+Package: linux-image-amd64
+Status: install ok unpacked
+Priority: optional
+Section: kernel
+Installed-Size: 18
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Architecture: amd64
+Source: linux-latest (105+deb10u16)
+Version: 4.19+105+deb10u16
+Provides: linux-latest-modules-4.19.0-21-amd64
+Depends: linux-image-4.19.0-21-amd64
+Description: Linux for 64-bit PCs (meta-package)
+ This package depends on the latest Linux kernel and modules for use on PCs
+ with AMD64, Intel 64 or VIA Nano processors.
+
 Package: login
 Essential: yes
 Status: install ok installed
@@ -2759,7 +3610,7 @@ Description: system login tools
 Homepage: https://github.com/shadow-maint/shadow
 
 Package: logrotate
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 150
@@ -2771,10 +3622,10 @@ Depends: libacl1 (>= 2.2.51-8), libc6 (>= 2.27), libpopt0 (>= 1.14), libselinux1
 Recommends: bsd-mailx | mailx
 Breaks: postgresql-common (<= 126)
 Conffiles:
- /etc/cron.daily/logrotate newconffile
- /etc/logrotate.conf newconffile
- /etc/logrotate.d/btmp newconffile
- /etc/logrotate.d/wtmp newconffile
+ /etc/cron.daily/logrotate 31da718265eaaa2fdabcfb2743bda171
+ /etc/logrotate.conf f9e5a2cb8c18105d232cdaf0521fed9e
+ /etc/logrotate.d/btmp 55631862595faf6432786dc335eb3f44
+ /etc/logrotate.d/wtmp 46cd7ecb1810441bd450987a976f5540
 Description: Log rotation utility
  The logrotate utility is designed to simplify the administration of
  log files on a system which generates a lot of log files.  Logrotate
@@ -2785,7 +3636,7 @@ Description: Log rotation utility
 Homepage: https://github.com/logrotate/logrotate
 
 Package: lsb-base
-Status: install ok unpacked
+Status: install ok installed
 Priority: required
 Section: misc
 Installed-Size: 49
@@ -2830,6 +3681,31 @@ Description: a pattern scanning and text processing language
  Mawk is smaller and much faster than gawk. It has some compile-time
  limits such as NF = 32767 and sprintf buffer = 1020.
 
+Package: mime-support
+Status: install ok installed
+Priority: standard
+Section: net
+Installed-Size: 110
+Maintainer: Mime-Support Packagers <team+debian-mimesupport-packagers@tracker.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Version: 3.62
+Recommends: bzip2, file, xz-utils
+Conffiles:
+ /etc/mime.types 0d516753aee0a2c670c79667aad0c836
+ /etc/mailcap.order ba07e08a7fe3741d0b8339127963190e
+Description: MIME files 'mime.types' & 'mailcap', and support programs
+ As these files can be used by all MIME compliant programs, they
+ have been moved into their own package that others can depend upon.
+ .
+ Other packages add themselves as viewers/editors/composers/etc by
+ using the provided "update-mime" program.
+ .
+ In addition, the commands "see", "edit", "compose", and "print"
+ will display, alter, create, and print (respectively) any file using
+ a program determined from the entries in the mime.types and mailcap
+ files.
+
 Package: mount
 Status: install ok installed
 Priority: required
@@ -2851,7 +3727,7 @@ Description: tools for mounting and manipulating filesystems
 Important: yes
 
 Package: nano
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: editors
 Installed-Size: 2216
@@ -2864,7 +3740,7 @@ Suggests: spell
 Breaks: nano-tiny (<< 2.8.6-2)
 Conflicts: pico
 Conffiles:
- /etc/nanorc newconffile
+ /etc/nanorc b9d6a84830d9aa3008a38cc68a320591
 Description: small, friendly text editor inspired by Pico
  GNU nano is an easy-to-use text editor originally designed as a replacement
  for Pico, the ncurses-based editor from the non-free mailer package Pine
@@ -2931,7 +3807,7 @@ Description: terminal-related programs and man pages
 Homepage: https://invisible-island.net/ncurses/
 
 Package: netbase
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 44
@@ -2940,15 +3816,28 @@ Architecture: all
 Multi-Arch: foreign
 Version: 5.6
 Conffiles:
- /etc/protocols newconffile
- /etc/rpc newconffile
- /etc/services newconffile
+ /etc/protocols bb9c019d6524e913fd72441d58b68216
+ /etc/rpc f0b6f6352bf886623adc04183120f83b
+ /etc/services c2f245a9bee4ea2e830fbf1f2100617e
 Description: Basic TCP/IP networking system
  This package provides the necessary infrastructure for basic TCP/IP based
  networking.
  .
  In particular, it supplies tables of common name-to-number mappings in
  /etc/services, /etc/rpc, and /etc/protocols.
+
+Package: os-prober
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 108
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Architecture: amd64
+Version: 1.77
+Depends: libc6 (>= 2.4), grub-common
+Description: utility to detect other OSes on a set of drives
+ This package detects other OSes available on a system and outputs the
+ results in a generic machine-readable format.
 
 Package: passwd
 Status: install ok installed
@@ -3002,8 +3891,24 @@ Description: minimal Perl system
  and "perl-doc").
 Homepage: http://dev.perl.org/perl5/
 
+Package: pigz
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 253
+Maintainer: Eduard Bloch <blade@debian.org>
+Architecture: amd64
+Version: 2.4-1
+Depends: libc6 (>= 2.14), zlib1g (>= 1:1.2.6)
+Pre-Depends: dpkg (>= 1.15.6)
+Description: Parallel Implementation of GZip
+ pigz, which stands for Parallel Implementation of GZip, is a fully functional
+ replacement for gzip that takes advantage of multiple processors and multiple
+ cores when compressing data.
+Homepage: http://zlib.net/pigz/
+
 Package: procps
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 729
@@ -3017,10 +3922,10 @@ Recommends: psmisc
 Breaks: guymager (<= 0.5.9-1), open-vm-tools (<= 2011.12.20-562307-1)
 Conflicts: pgrep (<< 3.3-5), w-bassman (<< 1.0-3)
 Conffiles:
- /etc/init.d/procps newconffile
- /etc/sysctl.conf newconffile
- /etc/sysctl.d/README.sysctl newconffile
- /etc/sysctl.d/protect-links.conf newconffile
+ /etc/init.d/procps f2e4546011b2960ac898b532becbc1f8
+ /etc/sysctl.conf 08d130f6eb93c063d0b45a05bdbe784f
+ /etc/sysctl.d/README.sysctl 026e08987e39bd612ae311f2d9fc2089
+ /etc/sysctl.d/protect-links.conf 165698699efd8936433f95cc7cea518f
 Description: /proc file system utilities
  This package provides command line and full screen utilities for browsing
  procfs, a "pseudo" file system dynamically generated by the kernel to
@@ -3031,8 +3936,91 @@ Description: /proc file system utilities
  snice, sysctl, tload, top, uptime, vmstat, w, and watch.
 Homepage: https://gitlab.com/procps-ng/procps
 
+Package: python3
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 187
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: allowed
+Source: python3-defaults
+Version: 3.7.3-1
+Replaces: python3-minimal (<< 3.1.2-2)
+Provides: python3-profiler
+Depends: python3.7 (>= 3.7.3-1~), libpython3-stdlib (= 3.7.3-1)
+Pre-Depends: python3-minimal (= 3.7.3-1)
+Suggests: python3-doc (>= 3.7.3-1), python3-tk (>= 3.7.2-1~), python3-venv (>= 3.7.3-1)
+Description: interactive high-level object-oriented language (default python3 version)
+ Python, the high-level, interactive object oriented language,
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package is a dependency package, which depends on Debian's default
+ Python 3 version (currently v3.7).
+Homepage: https://www.python.org/
+Cnf-Extra-Commands: python
+Cnf-Priority-Bonus: 5
+
+Package: python3-minimal
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 121
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: allowed
+Source: python3-defaults
+Version: 3.7.3-1
+Depends: dpkg (>= 1.13.20)
+Pre-Depends: python3.7-minimal (>= 3.7.3-1~)
+Description: minimal subset of the Python language (default python3 version)
+ This package contains the interpreter and some essential modules.  It's used
+ in the boot process for some basic tasks.
+ See /usr/share/doc/python3.7-minimal/README.Debian for a list of the modules
+ contained in this package.
+Homepage: https://www.python.org/
+
+Package: python3.7
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 408
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: allowed
+Version: 3.7.3-2+deb10u3
+Depends: python3.7-minimal (= 3.7.3-2+deb10u3), libpython3.7-stdlib (= 3.7.3-2+deb10u3), mime-support
+Suggests: python3.7-venv, python3.7-doc, binutils
+Breaks: diffoscope (<< 98), fail2ban (<= 0.10.2-2), gnome-builder (<< 3.28.3-1), gpodder (<< 3.10.3-2), libboost-python1.62.0 (<< 1.62.0+dfsg-6), linux-show-player (<= 0.5-1), oca-core (<= 11.0.20180420-1), openscap-daemon (<< 0.1.10-3), patroni (<< 1.4.4-2), python3-aiomeasures (<< 0.5.14-2), python3-aiopg (<= 0.14.0-1), python3-aiozmq (<= 0.7.1-2), python3-all (<< 3.6.5~rc1-1), python3-applicationinsights (<= 0.11.0-1), python3-astroid (<= 1.6.5-1), python3-astroquery (<= 0.3.8+dfsg-2), python3-async (<= 0.6.2-2), python3-azure (<= 20170915+git-1), python3-blist (<< 1.3.6-5), python3-celery (<= 4.2.0-1), python3-cs (<< 2.3.1-1), python3-cxx-dev (<< 7.0.3-2), python3-dev (<< 3.6.5~rc1-1), python3-django (<< 1:1.11.13-2), python3-dkim (<< 0.9.0), python3-dns (<< 3.2.0-1), python3-doublex (<= 1.8.2-1), python3-dropbox (<= 8.7.1-1), python3-engineio (<= 1.6.1-1), python3-exabgp (<< 4.0.8-1), python3-gbulb (<= 0.5.3-2), python3-glance (<= 2:16.0.1-6), python3-http-parser (<= 0.8.3-2+b3), python3-hug (<= 2.3.0-1.1), python3-jira (<= 1.0.10-1), python3-libcloud (<= 2.3.0-1), python3-mastodon (<= 1.2.2-1), python3-maxminddb (<< 1.4.1-1~), python3-morse-simulator (<= 1.4-3), python3-motor (<= 1.2.3-1.1), python3-murano (<= 1:5.0.0-1), python3-nova (<= 2:17.0.3-12), python3-opcua (<= 0.95.1-1), python3-opengl (<= 3.1.0+dfsg-1), python3-panoramisk (<= 1.0-1), python3-pexpect (<< 4.6.0-1~), python3-protobuf (<= 3.0.0-9.1+b1), python3-protorpc-standalone (<= 0.9.1-3), python3-psycopg2 (<< 2.7.5-2), python3-pyatspi (<= 2.26.0+dfsg-1), python3-pycsw (<< 2.2.0+dfsg-4), python3-pycuda (<= 2017.1.1-2+b1), python3-pylama (<= 7.4.3-1), python3-pysnmp4 (<= 4.4.3-1), python3-rpyc (<= 3.4.4-1), python3-signaller (<= 1.1.0-1), python3-sleekxmpp (<= 1.3.3-3), python3-slixmpp (<< 1.3.0+git20180724-1), python3-tango (<= 9.2.3-1), python3-trollius (<< 2.1~b1-5), python3-tweepy (<= 3.5.0-1), python3-twisted (<< 18.4.0-2), python3-txfixtures (<= 0.2.6-1), python3-ubjson (<= 0.8.5-2), python3-venv (<< 3.6.5-2), python3-websockets (<= 4.0.1-1), python3-ws4py (<= 0.4.2+dfsg1-2), python3-yowsup (<= 2.5.7-3), pyzo (<< 4.4.3-1.1~), salt-common (<= 2017.7.4+dfsg1-1), snakemake (<< 5.2.1-1), visidata (<= 1.0-1), voltron (<= 0.1.4-2), xapers (<< 0.8.2-1.1)
+Description: Interactive high-level object-oriented language (version 3.7)
+ Python is a high-level, interactive, object-oriented language. Its 3.7 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+
+Package: python3.7-minimal
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 9652
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: allowed
+Source: python3.7
+Version: 3.7.3-2+deb10u3
+Depends: libpython3.7-minimal (= 3.7.3-2+deb10u3), libexpat1 (>= 2.1~beta3), zlib1g (>= 1:1.2.0)
+Pre-Depends: libc6 (>= 2.28)
+Recommends: python3.7
+Suggests: binfmt-support
+Conflicts: binfmt-support (<< 1.1.2)
+Description: Minimal subset of the Python language (version 3.7)
+ This package contains the interpreter and some essential modules.  It can
+ be used in the boot process for some basic tasks.
+ See /usr/share/doc/python3.7-minimal/README.Debian for a list of the modules
+ contained in this package.
+
 Package: readline-common
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: utils
 Installed-Size: 89
@@ -3054,7 +4042,7 @@ Description: GNU readline and history libraries, common files
  recalling lines of previously typed input.
 
 Package: rsyslog
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 1809
@@ -3068,11 +4056,11 @@ Recommends: logrotate
 Suggests: rsyslog-mysql | rsyslog-pgsql, rsyslog-mongodb, rsyslog-doc, rsyslog-gnutls, rsyslog-gssapi, rsyslog-relp
 Conflicts: linux-kernel-log-daemon, system-log-daemon
 Conffiles:
- /etc/default/rsyslog newconffile
- /etc/init.d/rsyslog newconffile
- /etc/logcheck/ignore.d.server/rsyslog newconffile
- /etc/logrotate.d/rsyslog newconffile
- /etc/rsyslog.conf newconffile
+ /etc/default/rsyslog c7af23c348917e877399baea1849727a
+ /etc/init.d/rsyslog bd41a0654a192d74dfb9c551b06fa855
+ /etc/logcheck/ignore.d.server/rsyslog 650507df599fbbdd6cb4142bd77fd2ff
+ /etc/logrotate.d/rsyslog 8159203bf98416c898849057f585e31f
+ /etc/rsyslog.conf 368844ce10aedc97b5ec13d3f316d621
 Description: reliable system and kernel logging daemon
  Rsyslog is a multi-threaded implementation of syslogd (a system utility
  providing support for message logging), with features that include:
@@ -3109,7 +4097,7 @@ Description: GNU stream editor for filtering/transforming text
 Homepage: https://www.gnu.org/software/sed/
 
 Package: sensible-utils
-Status: install ok unpacked
+Status: install ok installed
 Priority: required
 Section: utils
 Installed-Size: 62
@@ -3127,7 +4115,7 @@ Description: Utilities for sensible alternative selection
  sensible-pager
 
 Package: systemd
-Status: install ok installed
+Status: install ok triggers-pending
 Priority: important
 Section: admin
 Installed-Size: 13484
@@ -3165,6 +4153,7 @@ Description: system and service manager
  .
  Installing the systemd package will not switch your init system unless you
  boot with init=/bin/systemd or install systemd-sysv in addition.
+Triggers-Pending: /etc/init.d
 Homepage: https://www.freedesktop.org/wiki/Software/systemd
 
 Package: systemd-sysv
@@ -3241,7 +4230,7 @@ Description: GNU version of the tar archiving utility
 Homepage: https://www.gnu.org/software/tar/
 
 Package: tasksel
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 378
@@ -3256,7 +4245,7 @@ Description: tool for selecting tasks for installation on Debian systems
  want to configure their system to perform a specific task.
 
 Package: tasksel-data
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 211
@@ -3291,8 +4280,48 @@ Description: time zone and daylight-saving time data
  daylight-saving rules.
 Homepage: https://www.iana.org/time-zones
 
+Package: ucf
+Status: install ok installed
+Priority: standard
+Section: utils
+Installed-Size: 188
+Maintainer: Manoj Srivastava <srivasta@debian.org>
+Architecture: all
+Multi-Arch: foreign
+Version: 3.0038+nmu1
+Depends: debconf (>= 1.5.19), coreutils (>= 5.91), sensible-utils
+Conffiles:
+ /etc/ucf.conf 5565b8b26108c49ba575ba452cd69b3e
+Description: Update Configuration File(s): preserve user changes to config files
+ Debian policy mandates that user changes to configuration files must be
+ preserved during package upgrades. The easy way to achieve this behavior
+ is to make the configuration file a 'conffile', in which case dpkg
+ handles the file specially during upgrades, prompting the user as
+ needed.
+ .
+ This is appropriate only if it is possible to distribute a default
+ version that will work for most installations, although some system
+ administrators may choose to modify it. This implies that the
+ default version will be part of the package distribution, and must
+ not be modified by the maintainer scripts during installation (or at
+ any other time).
+ .
+ This script attempts to provide conffile-like handling for files that
+ may not be labelled conffiles, and are not shipped in a Debian package,
+ but handled by the postinst instead. This script allows one to
+ maintain files in /etc, preserving user changes and in general
+ offering the same facilities while upgrading that dpkg normally
+ provides for 'conffiles'.
+ .
+ Additionally, this script provides facilities for transitioning a
+ file that had not been provided with conffile-like protection to come
+ under this schema, and attempts to minimize questions asked at
+ installation time. Indeed, the transitioning facility is better than the
+ one offered by dpkg while transitioning a file from a non-conffile to
+ conffile status.
+
 Package: udev
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: admin
 Installed-Size: 8289
@@ -3306,8 +4335,8 @@ Depends: libacl1 (>= 2.2.23), libblkid1 (>= 2.24), libc6 (>= 2.28), libkmod2 (>=
 Breaks: ifplugd (<< 0.28-19.1~), ifupdown (<< 0.8.5~), joystick (<< 1:1.4.9-1~), systemd (<< 233-4)
 Conflicts: hal
 Conffiles:
- /etc/init.d/udev newconffile
- /etc/udev/udev.conf newconffile
+ /etc/init.d/udev dac6ea9ad4b87245daebca0f49d19bd3
+ /etc/udev/udev.conf 742cd39fa3640a4352f8abae4aabc3d1
 Description: /dev/ and hotplug management daemon
  udev is a daemon which dynamically creates and removes device nodes from
  /dev/, handles hotplug events and loads drivers at boot time.
@@ -3342,8 +4371,32 @@ Description: miscellaneous system utilities
  messages, create new filesystems, view block device information,
  interface with real time clock, etc.
 
+Package: vim
+Status: install ok installed
+Priority: optional
+Section: editors
+Installed-Size: 2800
+Maintainer: Debian Vim Maintainers <team+vim@tracker.debian.org>
+Architecture: amd64
+Version: 2:8.1.0875-5+deb10u2
+Provides: editor
+Depends: vim-common (= 2:8.1.0875-5+deb10u2), vim-runtime (= 2:8.1.0875-5+deb10u2), libacl1 (>= 2.2.23), libc6 (>= 2.15), libgpm2 (>= 1.20.7), libselinux1 (>= 1.32), libtinfo6 (>= 6)
+Suggests: ctags, vim-doc, vim-scripts
+Description: Vi IMproved - enhanced vi editor
+ Vim is an almost compatible version of the UNIX editor Vi.
+ .
+ Many new features have been added: multi level undo, syntax
+ highlighting, command line history, on-line help, filename
+ completion, block operations, folding, Unicode support, etc.
+ .
+ This package contains a version of vim compiled with a rather
+ standard set of features.  This package does not provide a GUI
+ version of Vim.  See the other vim-* packages if you need more
+ (or less).
+Homepage: https://www.vim.org/
+
 Package: vim-common
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: editors
 Installed-Size: 334
@@ -3355,7 +4408,7 @@ Version: 2:8.1.0875-5+deb10u2
 Depends: xxd
 Recommends: vim | vim-gtk | vim-gtk3 | vim-athena | vim-nox | vim-tiny
 Conffiles:
- /etc/vim/vimrc newconffile
+ /etc/vim/vimrc f24e66036f0802ed65c21cde317548a0
 Description: Vi IMproved - Common files
  Vim is an almost compatible version of the UNIX editor Vi.
  .
@@ -3364,8 +4417,31 @@ Description: Vi IMproved - Common files
  configuration files.
 Homepage: https://www.vim.org/
 
+Package: vim-runtime
+Status: install ok installed
+Priority: optional
+Section: editors
+Installed-Size: 29628
+Maintainer: Debian Vim Maintainers <team+vim@tracker.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Source: vim
+Version: 2:8.1.0875-5+deb10u2
+Recommends: vim | vim-gtk | vim-gtk3 | vim-athena | vim-nox | vim-tiny
+Breaks: vim-tiny (<< 2:8.1.0875-5+deb10u2)
+Enhances: vim-tiny
+Description: Vi IMproved - Runtime files
+ Vim is an almost compatible version of the UNIX editor Vi.
+ .
+ This package contains vimtutor and the architecture independent runtime
+ files, used, if available, by all vim variants available in Debian.
+ Example of such runtime files are: online documentation, rules for
+ language-specific syntax highlighting and indentation, color schemes,
+ and standard plugins.
+Homepage: https://www.vim.org/
+
 Package: vim-tiny
-Status: install ok unpacked
+Status: install ok installed
 Priority: important
 Section: editors
 Installed-Size: 1344
@@ -3377,7 +4453,7 @@ Provides: editor
 Depends: vim-common (= 2:8.1.0875-5+deb10u2), libacl1 (>= 2.2.23), libc6 (>= 2.15), libselinux1 (>= 1.32), libtinfo6 (>= 6)
 Suggests: indent
 Conffiles:
- /etc/vim/vimrc.tiny newconffile
+ /etc/vim/vimrc.tiny edcfb3dbbc5c68b875e3b4ad399f261a
 Description: Vi IMproved - enhanced vi editor - compact version
  Vim is an almost compatible version of the UNIX editor Vi.
  .
@@ -3390,7 +4466,7 @@ Description: Vi IMproved - enhanced vi editor - compact version
 Homepage: https://www.vim.org/
 
 Package: whiptail
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 70
@@ -3408,7 +4484,7 @@ Description: Displays user-friendly dialog boxes from shell scripts
 Homepage: https://pagure.io/newt
 
 Package: xxd
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: editors
 Installed-Size: 188
@@ -3424,6 +4500,41 @@ Description: tool to make (or reverse) a hex dump
  xxd creates a hex dump of a given file or standard input.  It can also convert
  a hex dump back to its original binary form.
 Homepage: https://www.vim.org/
+
+Package: xz-utils
+Status: install ok installed
+Priority: standard
+Section: utils
+Installed-Size: 442
+Maintainer: Jonathan Nieder <jrnieder@gmail.com>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 5.2.4-1+deb10u1
+Replaces: lzip (<< 1.8~rc2), xz-lzma
+Provides: lzma
+Depends: libc6 (>= 2.17), liblzma5 (>= 5.2.2)
+Breaks: lzip (<< 1.8~rc2)
+Conflicts: lzma (<< 9.22-1), xz-lzma
+Description: XZ-format compression utilities
+ XZ is the successor to the Lempel-Ziv/Markov-chain Algorithm
+ compression format, which provides memory-hungry but powerful
+ compression (often better than bzip2) and fast, easy decompression.
+ .
+ This package provides the command line tools for working with XZ
+ compression, including xz, unxz, xzcat, xzgrep, and so on. They can
+ also handle the older LZMA format, and if invoked via appropriate
+ symlinks will emulate the behavior of the commands in the lzma
+ package.
+ .
+ The XZ format is similar to the older LZMA format but includes some
+ improvements for general use:
+ .
+  * 'file' magic for detecting XZ files;
+  * crc64 data integrity check;
+  * limited random-access reading support;
+  * improved support for multithreading (not used in xz-utils);
+  * support for flushing the encoder.
+Homepage: https://tukaani.org/xz/
 
 Package: zlib1g
 Status: install ok installed

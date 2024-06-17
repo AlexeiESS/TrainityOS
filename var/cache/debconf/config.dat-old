@@ -7,6 +7,11 @@ Name: adduser/title
 Template: adduser/title
 Owners: adduser
 
+Name: apparmor/homedirs
+Template: apparmor/homedirs
+Value: 
+Owners: apparmor
+
 Name: base-passwd/group-add
 Template: base-passwd/group-add
 Owners: base-passwd
@@ -111,6 +116,84 @@ Name: glibc/upgrade
 Template: glibc/upgrade
 Owners: libc6, libc6:amd64
 
+Name: grub-pc/chainload_from_menu.lst
+Template: grub-pc/chainload_from_menu.lst
+Owners: grub-pc
+
+Name: grub-pc/disk_description
+Template: grub-pc/disk_description
+Owners: grub-pc
+
+Name: grub-pc/hidden_timeout
+Template: grub-pc/hidden_timeout
+Owners: grub-pc
+
+Name: grub-pc/install_devices
+Template: grub-pc/install_devices
+Owners: grub-pc
+
+Name: grub-pc/install_devices_disks_changed
+Template: grub-pc/install_devices_disks_changed
+Owners: grub-pc
+
+Name: grub-pc/install_devices_empty
+Template: grub-pc/install_devices_empty
+Owners: grub-pc
+
+Name: grub-pc/install_devices_failed
+Template: grub-pc/install_devices_failed
+Owners: grub-pc
+
+Name: grub-pc/install_devices_failed_upgrade
+Template: grub-pc/install_devices_failed_upgrade
+Owners: grub-pc
+
+Name: grub-pc/kopt_extracted
+Template: grub-pc/kopt_extracted
+Owners: grub-pc
+
+Name: grub-pc/mixed_legacy_and_grub2
+Template: grub-pc/mixed_legacy_and_grub2
+Owners: grub-pc
+
+Name: grub-pc/partition_description
+Template: grub-pc/partition_description
+Owners: grub-pc
+
+Name: grub-pc/postrm_purge_boot_grub
+Template: grub-pc/postrm_purge_boot_grub
+Owners: grub-pc
+
+Name: grub-pc/timeout
+Template: grub-pc/timeout
+Owners: grub-pc
+
+Name: grub2/force_efi_extra_removable
+Template: grub2/force_efi_extra_removable
+Owners: grub-pc
+
+Name: grub2/kfreebsd_cmdline
+Template: grub2/kfreebsd_cmdline
+Owners: grub-pc
+
+Name: grub2/kfreebsd_cmdline_default
+Template: grub2/kfreebsd_cmdline_default
+Owners: grub-pc
+
+Name: grub2/linux_cmdline
+Template: grub2/linux_cmdline
+Value: 
+Owners: grub-pc
+
+Name: grub2/linux_cmdline_default
+Template: grub2/linux_cmdline_default
+Value: quiet
+Owners: grub-pc
+
+Name: grub2/update_nvram
+Template: grub2/update_nvram
+Owners: grub-pc
+
 Name: iproute2/setcaps
 Template: iproute2/setcaps
 Value: false
@@ -168,6 +251,30 @@ Owners: libssl1.1:amd64
 Name: libssl1.1/restart-services
 Template: libssl1.1/restart-services
 Owners: libssl1.1:amd64
+
+Name: linux-base/removing-running-kernel
+Template: linux-base/removing-running-kernel
+Owners: linux-base
+
+Name: linux-base/removing-title
+Template: linux-base/removing-title
+Owners: linux-base
+
+Name: tasksel/desktop
+Template: tasksel/desktop
+Owners: tasksel
+
+Name: tasksel/first
+Template: tasksel/first
+Owners: tasksel
+
+Name: tasksel/tasks
+Template: tasksel/tasks
+Owners: tasksel
+
+Name: tasksel/title
+Template: tasksel/title
+Owners: tasksel
 
 Name: tzdata/Areas
 Template: tzdata/Areas
@@ -228,4 +335,24 @@ Owners: tzdata
 Name: tzdata/Zones/US
 Template: tzdata/Zones/US
 Owners: tzdata
+
+Name: ucf/changeprompt
+Template: ucf/changeprompt
+Owners: ucf
+
+Name: ucf/changeprompt_threeway
+Template: ucf/changeprompt_threeway
+Owners: ucf
+
+Name: ucf/conflicts_found
+Template: ucf/conflicts_found
+Owners: ucf
+
+Name: ucf/show_diff
+Template: ucf/show_diff
+Owners: ucf
+
+Name: ucf/title
+Template: ucf/title
+Owners: ucf
 

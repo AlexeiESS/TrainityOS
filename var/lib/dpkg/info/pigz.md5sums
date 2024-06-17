@@ -1,0 +1,7 @@
+bb8265051b2e996f3bc6305b4c942dd4  usr/bin/pigz
+bb8265051b2e996f3bc6305b4c942dd4  usr/bin/unpigz
+df10e05ec25e3575b7f38942e52beb5f  usr/share/doc/pigz/README
+776baf0b01ddb763913934367b11a227  usr/share/doc/pigz/README.Debian
+ab5b4eb96a67b6551c216db8971556b9  usr/share/doc/pigz/changelog.Debian.gz
+38b02b52a924346905261ff356397080  usr/share/doc/pigz/copyright
+ec67c3d893b6b34c65e6be4c79e08129  usr/share/man/man1/pigz.1.gz
